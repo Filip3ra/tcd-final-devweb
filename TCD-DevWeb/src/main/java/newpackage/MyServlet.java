@@ -32,15 +32,15 @@ public class MyServlet extends HttpServlet {
             throws ServletException, IOException {
         
         
-        //Calc c = new Calc();
-        //c.setN1(5.0);
-        //c.setN2(17.5);
+        Calc c = new Calc();
+        c.setN1(5.0);
+        c.setN2(17.5);
         
-        Calc c = new Calc(
-                Double.parseDouble(request.getParameter("n1")), 
-                Double.parseDouble(request.getParameter("n2")), 
-                request.getParameter("op")
-        );
+//        Calc c = new Calc(
+//                Double.parseDouble(request.getParameter("n1")), 
+//                Double.parseDouble(request.getParameter("n2")), 
+//                request.getParameter("op")
+//        );
 
         
         
