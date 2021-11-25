@@ -20,7 +20,8 @@ public class TarefaBean implements TarefaBeanLocal {
     EntityManager entityManager;
     
     
-    
-    // Add business logic below. (Right-click in editor and choose
-    // "Insert Code > Add Business Method")
+    @Override
+    public void salvar(Tarefa tarefa) {
+        entityManager.persist(tarefa);
+    }
 }

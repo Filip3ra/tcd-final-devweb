@@ -15,4 +15,6 @@ import javax.ejb.Local;
 @Local
 public interface TarefaBeanLocal {
 
+    void salvar(Tarefa tarefa);
+
 }
