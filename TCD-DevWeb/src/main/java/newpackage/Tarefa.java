@@ -18,6 +18,24 @@ import javax.persistence.Transient;
 /**
  *
  * @author Filip
+ * 
+ * A classe Tarefa representa minha tabela no BD. 
+ * Cada variável representa uma coluna.
+ * 
+ * O servelet usado vai obter os dados e chamar o TarefaBeanLocal com os métodos dele.
+ * 
+ * TarefaBeanLocal contém os métodos que vão ser usados para persistência.
+ * Exemplo, salvar.
+ * 
+ * TarefaBean fará a persistência. 
+ * 
+ * --------------------------------------------------------------------------
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
  */
 @Entity
 public class Tarefa implements Serializable {
