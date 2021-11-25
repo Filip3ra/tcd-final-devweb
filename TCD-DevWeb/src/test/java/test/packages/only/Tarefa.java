@@ -3,26 +3,57 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package newpackage;
+package test.packages.only;
 
 import java.io.Serializable;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Transient;
 
 /**
  *
  * @author Filip
  */
 @Entity
-public class Responsavel implements Serializable {
+public class Tarefa implements Serializable {
 
     private static final long serialVersionUID = 1L;
+    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    
+    @Transient
+    private Short idade;
+    
+    @Column(length = 150, nullable = true)
+    private String descricao;
+    
+    private Boolean concluida;
 
+    
+    
+    
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
+
+    public Boolean getConcluida() {
+        return concluida;
+    }
+
+    public void setConcluida(Boolean concluida) {
+        this.concluida = concluida;
+    }
+
+    
     public Long getId() {
         return id;
     }
@@ -41,10 +72,10 @@ public class Responsavel implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Responsavel)) {
+        if (!(object instanceof Tarefa)) {
             return false;
         }
-        Responsavel other = (Responsavel) object;
+        Tarefa other = (Tarefa) object;
         if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }
@@ -53,7 +84,7 @@ public class Responsavel implements Serializable {
 
     @Override
     public String toString() {
-        return "newpackage.Responsavel[ id=" + id + " ]";
+        return "newpackage.Tarefa[ id=" + id + " ]";
     }
     
 }

@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package newpackage;
+package test.packages.only;
 
 import javax.ejb.Local;
 
