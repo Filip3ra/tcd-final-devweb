@@ -3,8 +3,9 @@
   <!-- Define Persistence Unit -->
   <persistence-unit name="SistemaPU">
     <jta-data-source>java:/SistemaDS</jta-data-source>
-    <class>test.packages.only.Responsavel</class>
-    <class>test.packages.only.Tarefa</class>
+    <class>test.packages.tarefa2.Tarefa2</class>
+    <class>.Tarefa</class>
+    <class>newpackage.Responsavel</class>
     <properties>
       <property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
     </properties>
