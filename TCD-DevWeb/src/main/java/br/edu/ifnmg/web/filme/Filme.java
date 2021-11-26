@@ -14,8 +14,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 /**
- *
- * @author Filip
+ * @author Lucas <lsm3 at aluno.ifnmg.edu.br>
+ * @author Filipi <fmrj at aluno.ifnmg.edu.br>
  */
 @Entity
 public class Filme implements Serializable {

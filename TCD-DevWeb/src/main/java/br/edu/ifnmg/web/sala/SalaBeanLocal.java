@@ -9,8 +9,8 @@ package br.edu.ifnmg.web.sala;
 import javax.ejb.Local;
 
 /**
- *
  * @author Lucas <lsm3 at aluno.ifnmg.edu.br>
+ * @author Filipi <fmrj at aluno.ifnmg.edu.br>
  */
 @Local
 public interface SalaBeanLocal {

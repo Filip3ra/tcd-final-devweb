@@ -17,8 +17,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- *
- * @author Filip
+ * @author Lucas <lsm3 at aluno.ifnmg.edu.br>
+ * @author Filipi <fmrj at aluno.ifnmg.edu.br>
  */
 @WebServlet(name = "FilmeServlet", urlPatterns = {"/FilmeServlet"})
 public class FilmeServlet extends HttpServlet {

@@ -18,10 +18,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- *
  * @author Lucas <lsm3 at aluno.ifnmg.edu.br>
+ * @author Filipi <fmrj at aluno.ifnmg.edu.br>
  */
-@WebServlet(name = "SessaoServlet", urlPatterns = {"/sessaoservlet"})
+@WebServlet(name = "SessaoServlet", urlPatterns = {"/SessaoServlet"})
 public class SessaoServlet extends HttpServlet {
 
     @Inject

@@ -7,14 +7,15 @@
 package br.edu.ifnmg.web.sala;
 
 import java.io.Serializable;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 /**
- *
  * @author Lucas <lsm3 at aluno.ifnmg.edu.br>
+ * @author Filipi <fmrj at aluno.ifnmg.edu.br>
  */
 @Entity
 public class Sala implements Serializable {
@@ -24,8 +25,10 @@ public class Sala implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(nullable = false, unique = true)
     private String nome;
     
+    @Column(nullable = false)
     private Integer capacidade;
     
 
