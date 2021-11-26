@@ -52,8 +52,33 @@ public class Tarefa implements Serializable {
     @Column(length = 150, nullable = true)
     private String descricao;
     
-    private Boolean concluida;
+//    private Boolean concluida;
 
+    private Integer duracao;
+
+    
+    
+    
+    
+    
+    
+    public Short getIdade() {
+        return idade;
+    }
+
+    public void setIdade(Short idade) {
+        this.idade = idade;
+    }
+
+    public Integer getDuracao() {
+        return duracao;
+    }
+
+    public void setDuracao(Integer duracao) {
+        this.duracao = duracao;
+    }
+    
+    
     
     
     
@@ -65,13 +90,13 @@ public class Tarefa implements Serializable {
         this.descricao = descricao;
     }
 
-    public Boolean getConcluida() {
-        return concluida;
-    }
-
-    public void setConcluida(Boolean concluida) {
-        this.concluida = concluida;
-    }
+//    public Boolean getConcluida() {
+//        return concluida;
+//    }
+//
+//    public void setConcluida(Boolean concluida) {
+//        this.concluida = concluida;
+//    }
 
     
     public Long getId() {

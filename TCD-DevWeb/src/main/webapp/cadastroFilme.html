@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        
+        <!-- <div>TODO write content</div> -->
+        
+        <h1>Cadastro de Filme.</h1>
+        
+        <form action="http://localhost:8080/TCD-DevWeb-1.0-SNAPSHOT/FilmeServlet" method="get">
+            <fieldset>
+                
+                <div>
+                    <label>Nome: </label>
+                    <input type="text" name="nome" id="nome">
+                
+                    <label>Gênero:</label>
+                    <input type="text" name="genero" id="genero">
+                    
+                    <label>Sinopse:</label>
+                    <input type="text" name="sinopse" id="sinopse">
+                
+                    <label>Classificação indicativa:</label>
+                    <input type="text" name="classificacao" id="classificacao">
+                    
+                    <label>Data de lançamento:</label>
+                    <input type="text" name="datalancamento" id="datalancamento">
+                    
+                    <label>Duração:</label>
+                    <input type="text" name="duracao" id="duracao">
+                </div>
+                
+                <button type="submit">Cadastrar</button>
+            </fieldset>
+        </form>
+        
+        <button><a href="http://localhost:8080/TCD-DevWeb-1.0-SNAPSHOT/">Home</a></button>
+        
+        
+        
+    </body>
+</html>
