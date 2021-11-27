@@ -8,6 +8,7 @@ package br.edu.ifnmg.web.usuario;
 
 import java.io.Serializable;
 import java.time.LocalDate;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -24,10 +25,16 @@ public class Usuario implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    
     private String nome;
+    
     private String email;
+    
     private String senha;
-    private String cpf;
+    
+    @Column(unique = true)
+    private Long cpf;
+    
     private boolean administrador;
 
     
@@ -35,11 +42,11 @@ public class Usuario implements Serializable {
         this.nome = "Indefinido";
         this.email = "Indefinido";
         this.senha = "Indefinido";
-        this.cpf = "Indefinido";
+        this.cpf = 0L;        
         this.administrador = false;
     }
     
-    public Usuario(String nome, String email, String senha, String cpf, boolean administrador){
+    public Usuario(String nome, String email, String senha, Long cpf, boolean administrador){
         this.nome = nome;
         this.email = email;
         this.senha = senha;
@@ -64,7 +71,7 @@ public class Usuario implements Serializable {
         this.senha = senha;
     }
 
-    public void setCpf(String cpf) {
+    public void setCpf(Long cpf) {
         this.cpf = cpf;
     }
 
@@ -89,7 +96,7 @@ public class Usuario implements Serializable {
         return senha;
     }
 
-    public String getCpf() {
+    public Long getCpf() {
         return cpf;
     }
 

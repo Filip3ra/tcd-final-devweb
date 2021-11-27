@@ -38,11 +38,14 @@ public class UsuarioServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
+        // NÃO ESTÁ PEGANDO SE O ADMIN É TRUE!!!! 
         Usuario usuario = new Usuario(request.getParameter("nome"), 
                 request.getParameter("email"),
                 request.getParameter("senha"),
-                request.getParameter("cpf"),
-                Boolean.parseBoolean(request.getParameter("administrador")));
+                Long.parseLong(request.getParameter("cpf")),
+                Boolean.parseBoolean(request.getParameter("admin")));
+        
+         System.out.println(">>>>>"+usuario.getAdministrador()); 
         
         usuarioBean.salvar(usuario);
         
@@ -78,8 +81,8 @@ public class UsuarioServlet extends HttpServlet {
             out.println("</tr>");
             out.println("</tbody>");
             out.println("</table>");
-            out.println("<p>Filme cadastrado com sucesso!</p>");
-            
+            out.println("<p>Usuário cadastrado com sucesso!</p>");
+            out.println("<button><a href=\"http://localhost:8080/TCD-DevWeb-1.0-SNAPSHOT/\">Retornar</a></button>"); 
             out.println("</body>");
             out.println("</html>");
         }

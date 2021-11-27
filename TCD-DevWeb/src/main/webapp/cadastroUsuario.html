@@ -6,23 +6,30 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <title>TODO supply a title</title>
+        <title>Cadastro de Usuário</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        
-        <h1>Cadastro de Sala</h1>
-        
-        <form action="http://localhost:8080/TCD-DevWeb-1.0-SNAPSHOT/SalaServlet" method="get">
+         <form action="http://localhost:8080/TCD-DevWeb-1.0-SNAPSHOT/UsuarioServlet" method="get">
             <fieldset>
                 
-                <div>
+                <div> 
+                    
                     <label>Nome: </label>
                     <input type="text" name="nome" id="nome">
                 
-                    <label>Capacidade:</label>
-                    <input type="text" name="capacidade" id="capacidade">
+                    <label>E-mail:</label>
+                    <input type="text" name="email" id="email">
+                    
+                    <label>Senha:</label>
+                    <input type="text" name="senha" id="senha">
+                    
+                    <label>Cpf:</label>
+                    <input type="text" name="cpf" id="cpf">
+                    
+                    <label>Administrador:</label>
+                    <input type="checkbox" name="admin" id="admin">
                   
                 </div>
                 

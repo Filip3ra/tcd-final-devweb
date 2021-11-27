@@ -34,7 +34,6 @@ br\edu\ifnmg\web\sessao\SessaoServlet.class
 br\edu\ifnmg\web\genero\GeneroServlet.class
 newpackage\Responsavel.class
 br\edu\ifnmg\web\genero\GeneroBeanLocal.class
-br\edu\ifnmg\web\sala\SalaServlet.class
 br\edu\ifnmg\web\horario\Horario.class
 newpackage\TarefaServlet.class
 br\edu\ifnmg\web\usuario\Usuario.class
