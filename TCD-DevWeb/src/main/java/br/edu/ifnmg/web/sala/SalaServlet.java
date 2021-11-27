@@ -18,6 +18,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  *
  * @author Lucas <lsm3 at aluno.ifnmg.edu.br>
+ * @author Filipi <fmrj at aluno.ifnmg.edu.br>
  */
 @WebServlet(name = "SalaServlet", urlPatterns = {"/SalaServlet"})
 public class SalaServlet extends HttpServlet {
