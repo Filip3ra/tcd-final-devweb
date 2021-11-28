@@ -18,7 +18,6 @@ public interface FilmeBeanLocal {
     
     void atualizar(Filme filme);
     
-    // Buscar não foi implementado, como implementar corretamente?
     Filme buscar(Long id);
     
     void deletar(Filme filme);

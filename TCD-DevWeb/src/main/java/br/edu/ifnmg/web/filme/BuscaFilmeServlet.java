@@ -46,7 +46,7 @@ public class BuscaFilmeServlet extends HttpServlet {
         Filme f;
         f = filmeBeanLocal.buscar(Long.parseLong(request.getParameter("nome")));
         
-                
+        
                 
         
         
@@ -61,6 +61,7 @@ public class BuscaFilmeServlet extends HttpServlet {
             out.println("<body>");
             out.println("<h1>Nome do filme buscado: " + f.getNome() + "</h1>");
             out.println("<h1>Genero do filme buscado: " + f.getGenero()+ "</h1>");
+            out.println("<button><a href=\"http://localhost:8080/TCD-DevWeb-1.0-SNAPSHOT/\">Retornar</a></button>"); 
             out.println("</body>");
             out.println("</html>");
         }

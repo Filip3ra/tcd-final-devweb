@@ -7,7 +7,6 @@ package br.edu.ifnmg.web.filme;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import javax.inject.Inject;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -18,13 +17,9 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Filip
  */
-@WebServlet(name = "DeleteFilmeServlet", urlPatterns = {"/DeleteFilmeServlet"})
-public class DeleteFilmeServlet extends HttpServlet {
+@WebServlet(name = "AtualizaFilmeServlet", urlPatterns = {"/AtualizaFilmeServlet"})
+public class AtualizaFilmeServlet extends HttpServlet {
 
-    
-    @Inject
-    private FilmeBeanLocal filmeBeanLocal;
-    
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -36,27 +31,18 @@ public class DeleteFilmeServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
-        Filme filme = new Filme();
-//        filme.setNome(request.getParameter("nome"));
-        filme.setId(Long.parseLong(request.getParameter("nome")));
-        
-        filmeBeanLocal.deletar(filme);
-        
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet DeleteFilmeServlet</title>");            
+            out.println("<title>Servlet AtualizaFilmeServlet</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Filme removido</h1>");
-            out.println("<button><a href=\"http://localhost:8080/TCD-DevWeb-1.0-SNAPSHOT/\">Retornar</a></button>");
+            out.println("<h1>Servlet AtualizaFilmeServlet at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
-            
         }
     }
 
