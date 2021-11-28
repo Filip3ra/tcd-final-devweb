@@ -31,8 +31,8 @@ public class FilmeBean implements FilmeBeanLocal {
 
     // PROBLEMA COM O FIND, precisa retornar o objeto buscado, como fazer isso?
     @Override
-    public Filme buscar(Filme filme) {
-        entityManager.find(Filme.class, filme);
+    public Filme buscar(Long id) {
+        Filme filme = entityManager.find(Filme.class, id);
         return filme;
     }
 

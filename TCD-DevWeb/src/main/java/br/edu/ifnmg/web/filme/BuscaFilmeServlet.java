@@ -38,12 +38,16 @@ public class BuscaFilmeServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
+//        
+//        Filme filme = new Filme();
+////        filme.setNome(request.getParameter("nome"));
+//        filme.setId(Long.parseLong(request.getParameter("nome")));
         
-        Filme filme = new Filme();
-//        filme.setNome(request.getParameter("nome"));
-        filme.setId(Long.parseLong(request.getParameter("nome")));
+        Filme f;
+        f = filmeBeanLocal.buscar(Long.parseLong(request.getParameter("nome")));
         
-        Filme filme2 = filmeBeanLocal.buscar(filme);
+                
+                
         
         
         response.setContentType("text/html;charset=UTF-8");
@@ -55,8 +59,8 @@ public class BuscaFilmeServlet extends HttpServlet {
             out.println("<title>Servlet BuscaFilmeServlet</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Nome do filme buscado: " + filme2.getNome() + "</h1>");
-            out.println("<h1>Genero do filme buscado: " + filme2.getGenero()+ "</h1>");
+            out.println("<h1>Nome do filme buscado: " + f.getNome() + "</h1>");
+            out.println("<h1>Genero do filme buscado: " + f.getGenero()+ "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
