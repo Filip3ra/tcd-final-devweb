@@ -58,6 +58,7 @@ public class SessaoServlet extends HttpServlet {
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>O intervalo &lt;" + sessao.getDataInicio() + "&gt; -  &lt;" + sessao.getDataTermino() + "&gt; foi definido com sucesso!</h1>");
+            out.println("<button><a href=\"http://localhost:8080/TCD-DevWeb-1.0-SNAPSHOT/\">Retornar</a></button>"); 
             out.println("</body>");
             out.println("</html>");
         }
