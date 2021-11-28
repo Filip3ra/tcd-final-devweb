@@ -7,6 +7,7 @@ package br.edu.ifnmg.web.filme;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.inject.Inject;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -20,6 +21,11 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet(name = "BuscaFilmeServlet", urlPatterns = {"/BuscaFilmeServlet"})
 public class BuscaFilmeServlet extends HttpServlet {
 
+    
+    
+    @Inject
+    private FilmeBeanLocal filmeBeanLocal;
+    
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -31,6 +37,15 @@ public class BuscaFilmeServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
+        
+        Filme filme = new Filme();
+//        filme.setNome(request.getParameter("nome"));
+        filme.setId(Long.parseLong(request.getParameter("nome")));
+        
+        Filme filme2 = filmeBeanLocal.buscar(filme);
+        
+        
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
@@ -40,7 +55,8 @@ public class BuscaFilmeServlet extends HttpServlet {
             out.println("<title>Servlet BuscaFilmeServlet</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet BuscaFilmeServlet at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Nome do filme buscado: " + filme2.getNome() + "</h1>");
+            out.println("<h1>Genero do filme buscado: " + filme2.getGenero()+ "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
