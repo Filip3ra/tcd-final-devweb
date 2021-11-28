@@ -14,6 +14,7 @@ br\edu\ifnmg\web\sessao\Sessao.class
 br\edu\ifnmg\web\filme\DeleteFilmeServlet.class
 br\edu\ifnmg\web\filme\FilmeBeanLocal.class
 newpackage\MyServlet.class
+newpackage\CadastraUsuarioCompleto.class
 br\edu\ifnmg\web\filme\FilmeServlet.class
 br\edu\ifnmg\web\ingresso\IngressoBeanLocal.class
 br\edu\ifnmg\web\sala\SalaBeanLocal.class

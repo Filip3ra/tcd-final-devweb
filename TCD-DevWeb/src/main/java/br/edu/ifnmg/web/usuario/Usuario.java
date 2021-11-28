@@ -51,6 +51,7 @@ public class Usuario implements Serializable {
         this.senha = "Indefinido";
         this.cpf = 0L;        
         this.administrador = false;
+        this.endereco = new Endereco();
     }
     
     public Usuario(String nome, String email, String senha, Long cpf, boolean administrador){
@@ -59,6 +60,15 @@ public class Usuario implements Serializable {
         this.senha = senha;
         this.cpf = cpf;
         this.administrador = administrador;
+    }
+    
+    public Usuario(String nome, String email, String senha, Long cpf, boolean administrador, Endereco endereco){
+        this.nome = nome;
+        this.email = email;
+        this.senha = senha;
+        this.cpf = cpf;
+        this.administrador = administrador;
+        this.endereco = endereco;
     }
     
     

@@ -11,7 +11,7 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-         <form action="http://localhost:8080/TCD-DevWeb-1.0-SNAPSHOT/UsuarioServlet" method="get">
+         <form action="http://localhost:8080/TCD-DevWeb-1.0-SNAPSHOT/CadastraUC" method="get">
             <fieldset>
                 
                 <div> 
@@ -28,9 +28,20 @@ and open the template in the editor.
                     <label>Cpf:</label>
                     <input type="text" name="cpf" id="cpf">
                     
-                    <label>Administrador:</label>
-                    <input type="checkbox" name="admin" id="admin">
-                  
+                    <label>Administrador("true" ou "false"):</label>
+                    <input type="text" name="admin" id="admin">
+                    
+                    <br />
+                    
+                    <label>Cidade: </label>
+                    <input type="text" name="cidade" id="cidade">
+                
+                    <label>Logradouro:</label>
+                    <input type="text" name="logradouro" id="logradouro">
+                    
+                    <label>Número:</label>
+                    <input type="text" name="numero" id="numero">
+                    
                 </div>
                 
                 <button type="submit">Cadastrar</button>
