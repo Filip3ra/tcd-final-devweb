@@ -1,10 +1,8 @@
 /*
- * Este código foi desenvolvido com intuito de aprender sobre desenvolvimento de aplicações WEB.
- * Este trabalho foi desenvolvido na disciplina de Desenvolvimento Web do IFNMG - Campus - Montes Claros.
- * Este é um projeto de código aberto que pode ser utilizado para ajudar as pessoas no desenvolvimento de aplicações Web.
- * Copyright (C) 2021 Lucas <lsm3 at aluno.ifnmg.edu.br>
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
  */
-package br.edu.ifnmg.web.usuario;
+package br.edu.ifnmg.web.endereco;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -16,15 +14,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
+ *
  * @author Lucas <lsm3 at aluno.ifnmg.edu.br>
- * @author Filipi <fmrj at aluno.ifnmg.edu.br>
  */
-@WebServlet(name = "UsuarioServlet", urlPatterns = {"/UsuarioServlet"})
-public class UsuarioServlet extends HttpServlet {
+@WebServlet(name = "EnderecoServlet", urlPatterns = {"/enderecoservlet"})
+public class EnderecoServlet extends HttpServlet {
 
     @Inject
-    private UsuarioBeanLocal usuarioBean;
-    
+    private EnderecoBeanLocal enderecoBean;
     
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -38,16 +35,9 @@ public class UsuarioServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-        // NÃO ESTÁ PEGANDO SE O ADMIN É TRUE!!!! 
-        Usuario usuario = new Usuario(request.getParameter("nome"), 
-                request.getParameter("email"),
-                request.getParameter("senha"),
-                Long.parseLong(request.getParameter("cpf")),
-                Boolean.parseBoolean(request.getParameter("admin")));
+        Endereco endereco = new Endereco(request.getParameter("cidade"), request.getParameter("logradouro"), Integer.parseInt(request.getParameter("numero")));
         
-         System.out.println(">>>>>"+usuario.getAdministrador()); 
-        
-        usuarioBean.salvar(usuario);
+        enderecoBean.salvar(endereco);
         
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
@@ -55,34 +45,30 @@ public class UsuarioServlet extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet UsuarioServlet</title>");            
+            out.println("<title>Servlet EnderecoServlet</title>");            
             out.println("</head>");
             out.println("<body>");
             
-            out.println("<h1>Cadastro de usuario.</h1>");
+            out.println("<h1>Cadastro de Endereco.</h1>");
             
             out.println("<table>");
             out.println("<thead>");
             out.println("<tr>");
-            out.println("<th>Nome</th>");
-            out.println("<th>E-mail</th>");
-            out.println("<th>Senha</th>");
-            out.println("<th>CPF</th>");
-            out.println("<th>Administrador</th>");
+            out.println("<th>Cidade</th>");
+            out.println("<th>Logradouro</th>");
+            out.println("<th>Número</th>");
             out.println("</tr>");
             out.println("</thead>");
             out.println("<tbody>");
             out.println("<tr>");
-            out.println("<td>" + usuario.getNome() + "</td>");
-            out.println("<td>" + usuario.getEmail() + "</td>");
-            out.println("<td>" + usuario.getSenha() + "</td>");
-            out.println("<td>" + usuario.getCpf() + "</td>");
-            out.println("<td>" + usuario.getAdministrador() + "</td>");
+            out.println("<td>" + endereco.getCidade() + "</td>");
+            out.println("<td>" + endereco.getLogradouro() + "</td>");
+            out.println("<td>" + endereco.getNumero() + "</td>");
             out.println("</tr>");
             out.println("</tbody>");
             out.println("</table>");
-            out.println("<p>Usuário cadastrado com sucesso!</p>");
-            out.println("<button><a href=\"http://localhost:8080/TCD-DevWeb-1.0-SNAPSHOT/\">Retornar</a></button>"); 
+            out.println("<p>Filme cadastrado com sucesso!</p>");
+            
             out.println("</body>");
             out.println("</html>");
         }

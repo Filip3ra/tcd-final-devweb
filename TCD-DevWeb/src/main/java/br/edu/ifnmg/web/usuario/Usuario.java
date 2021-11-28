@@ -6,13 +6,17 @@
  */
 package br.edu.ifnmg.web.usuario;
 
+import br.edu.ifnmg.web.endereco.Endereco;
 import java.io.Serializable;
 import java.time.LocalDate;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 /**
  *
@@ -36,6 +40,9 @@ public class Usuario implements Serializable {
     private Long cpf;
     
     private boolean administrador;
+    
+    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval = true)
+    private Endereco endereco;
 
     
     public Usuario(){
@@ -79,6 +86,10 @@ public class Usuario implements Serializable {
         this.administrador = administrador;
     }
 
+    public void setEndereco(Endereco endereco) {
+        this.endereco = endereco;
+    }
+    
     
     public Long getId() {
         return id;
@@ -102,6 +113,10 @@ public class Usuario implements Serializable {
 
     public boolean getAdministrador() {
         return administrador;
+    }
+
+    public Endereco getEndereco() {
+        return endereco;
     }
     
     
