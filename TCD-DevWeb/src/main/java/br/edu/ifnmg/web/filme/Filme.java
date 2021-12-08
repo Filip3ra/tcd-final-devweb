@@ -18,14 +18,14 @@ import javax.persistence.Id;
  * @author Filipi <fmrj at aluno.ifnmg.edu.br>
  */
 @Entity
-public class Filme implements Serializable {
+public class Filme implements Serializable { // Nome da tabela
 
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(length = 150, nullable = false)//@Column defini restrições/caracterisicas da coluna no BD
+    @Column(length = 150, nullable = false)//@Column define restrições/caracterisicas da coluna no BD
     private String nome;
     
     private String genero;
